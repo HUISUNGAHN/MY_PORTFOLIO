@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #eef1f5;
+  --surface: #ffffff;
+  --surface-2: #e2e7f0;
+  --ink: #1b2430;
+  --ink-2: #5b6676;
+  --ink-3: #8993a4;
+  --border: #dce2ea;
+
+  --accent: #2f4fc0;
+  --accent-soft: #e3e8fb;
+  --accent-contrast: #ffffff;
+
+  --grade-classic: #1e3a8a;
+  --grade-top: #2f4fc0;
+  --grade-high: #5470d6;
+  --grade-normal: #93a8e8;
+  --grade-bad: #dce3f7;
+
+  --grade-classic-ink: #ffffff;
+  --grade-top-ink: #ffffff;
+  --grade-high-ink: #ffffff;
+  --grade-normal-ink: #1b2430;
+  --grade-bad-ink: #1b2430;
+
+  --status-done: #1f8a5f;
+  --status-progress: #b8780a;
+  --status-wish: #4c63b6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11151d;
+    --surface: #171c26;
+    --surface-2: #1f2531;
+    --ink: #edeff4;
+    --ink-2: #b7becb;
+    --ink-3: #808b9e;
+    --border: #2a3140;
+
+    --accent: #8ca3ea;
+    --accent-soft: #232b42;
+    --accent-contrast: #0e1320;
+
+    --grade-classic: #afc1f2;
+    --grade-top: #8ca3ea;
+    --grade-high: #6b85dd;
+    --grade-normal: #4a5fa8;
+    --grade-bad: #333b5c;
+
+    --grade-classic-ink: #0e1320;
+    --grade-top-ink: #0e1320;
+    --grade-high-ink: #0e1320;
+    --grade-normal-ink: #edeff4;
+    --grade-bad-ink: #edeff4;
+
+    --status-done: #3da873;
+    --status-progress: #b87a1e;
+    --status-wish: #6e86d6;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #11151d;
+  --surface: #171c26;
+  --surface-2: #1f2531;
+  --ink: #edeff4;
+  --ink-2: #b7becb;
+  --ink-3: #808b9e;
+  --border: #2a3140;
+
+  --accent: #8ca3ea;
+  --accent-soft: #232b42;
+  --accent-contrast: #0e1320;
+
+  --grade-classic: #afc1f2;
+  --grade-top: #8ca3ea;
+  --grade-high: #6b85dd;
+  --grade-normal: #4a5fa8;
+  --grade-bad: #333b5c;
+
+  --grade-classic-ink: #0e1320;
+  --grade-top-ink: #0e1320;
+  --grade-high-ink: #0e1320;
+  --grade-normal-ink: #edeff4;
+  --grade-bad-ink: #edeff4;
+
+  --status-done: #3da873;
+  --status-progress: #b87a1e;
+  --status-wish: #6e86d6;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: var(--font-plex-kr);
+  --font-mono: var(--font-plex-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-plex-kr), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}

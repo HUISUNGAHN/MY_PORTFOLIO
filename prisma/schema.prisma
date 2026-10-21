@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum RecordType {
+  BOOK
+  VIDEO
+  QUOTE
+  AUDIO
+}
+
+enum RecordStatus {
+  DONE
+  IN_PROGRESS
+  WISHLIST
+}
+
+enum Grade {
+  CLASSIC
+  TOP
+  HIGH
+  NORMAL
+  BAD
+}
+
+model Record {
+  id          String       @id @default(cuid())
+  type        RecordType   @default(BOOK)
+  status      RecordStatus @default(WISHLIST)
+
+  title       String
+  author      String
+  publisher   String?
+  isbn        String?
+
+  summary     String
+  impression  String?
+  insight     String?
+  application String?
+  review      String?
+
+  rating      Float        @default(0)
+  grade       Grade        @default(NORMAL)
+  progress    Int          @default(0)
+  ageGroup    String?
+
+  isPremium      Boolean @default(false)
+  proSummary     String?
+  proLessons     String?
+  proDiscussion  String?
+
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([status])
+  @@index([grade])
+}
