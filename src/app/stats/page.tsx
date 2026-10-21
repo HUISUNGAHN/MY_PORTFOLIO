@@ -53,10 +53,11 @@ export default async function StatsPage() {
     return d;
   });
 
-  const activeDenominator = Math.max(1, doneCount + inProgressCount);
+  const activeRecords = records.filter((r) => r.status !== "WISHLIST");
+  const activeDenominator = Math.max(1, activeRecords.length);
   const dayCounts = days.map((d) => {
     const key = dateKey(d);
-    const count = records.filter((r) => dateKey(new Date(r.updatedAt)) === key).length;
+    const count = activeRecords.filter((r) => dateKey(new Date(r.updatedAt)) === key).length;
     return Math.round((count / activeDenominator) * 100);
   });
 
